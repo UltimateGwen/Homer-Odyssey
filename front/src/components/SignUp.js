@@ -41,11 +41,6 @@ class SignUp extends React.Component {
     this.setState({ lastname: event.target.value });
   };
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log('This form has been submitted with these fields', this.state);
-  // }
-
   updateLastnameField = (event) => {
     this.setState({ lastname: event.target.value });
   };
