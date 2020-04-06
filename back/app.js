@@ -8,7 +8,6 @@ const app = express();
 const authRouter = require('./routes/auth/auth');
 
 // set up the application
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
