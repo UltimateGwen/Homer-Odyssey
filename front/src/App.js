@@ -8,6 +8,8 @@ import Paper from '@material-ui/core/Paper';
 
 // import React, { Component } from 'react';
 import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -25,7 +27,10 @@ function App() {
               <Grid item sm={6} xs={12} alignContent="center">
                 <BrowserRouter>
                   <Switch>
+                    <Route exact path="/" component={SignIn} />
                     <Route path="/signup" component={SignUp} />
+                    <Route path="/signin" component={SignIn} />
+                    <Route path="/profile" component={Profile} />
                   </Switch>
                 </BrowserRouter>
               </Grid>
