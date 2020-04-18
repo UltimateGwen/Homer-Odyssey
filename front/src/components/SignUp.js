@@ -1,5 +1,10 @@
 import React from 'react';
+import { TextField, Button, SnackbarContent } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
+import './signup.css';
+const vertical = 'bottom';
+const horizontal = 'center';
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +53,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div>
+        <h1>Sign up motherf*ckers!</h1>
         <form onSubmit={this.handleSubmit}>
           <p>{this.state.email}</p>
           <input name="email" type="email" onChange={this.updateEmailField} />
@@ -81,12 +87,28 @@ class SignUp extends React.Component {
           />
           <br />
           <br />
-          <input type="submit" value="Submit" />
+          <Link to="/">
+            <Button variant="contained" color="secondary" type="submit">
+              Submit
+            </Button>
+          </Link>
         </form>
-
-        {/* <h1>{JSON.stringify(this.state, 1, 1)}</h1>
-
-        <input name="email" type="email" onChange={this.updateEmailField} /> */}
+        {this.state.flash ? (
+          <SnackbarContent
+            className="snackbar"
+            anchorOrigin={'bottom, center'}
+            message={this.state.flash}
+          />
+        ) : null}
+        {/* <Snackbar
+          anchorOrigin={{ vertical, horizontal }}
+          open={this.state.open}
+          onClose={this.handleClose}
+          ContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={<span id="message-id">{this.state.flash}</span>}
+        /> */}
       </div>
     );
   }
