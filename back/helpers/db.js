@@ -5,4 +5,10 @@ const connection = mysql.createConnection({
   password: 'homer_odyssey',
   database: 'homer_odyssey',
 });
+
+connection.connect((err) => {
+  if (err) throw err;
+  console.log('MySQL connected...');
+});
+
 module.exports = connection;

@@ -15,10 +15,10 @@ router.post('/', function (req, res, next) {
     if (err) {
       // If an error has occurred, then the user is informed of the error
       console.log(err);
-      res.status(500).send('Error saving an user');
+      res.status(500).json({ flash: error.message });
     } else {
       // If everything went well, send a status that says "ok".
-      res.send('Success');
+      res.status(200).json({ flash: 'User has been signed up!' });
     }
   });
 });
